@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoService</title>
+    <meta
+      name="description"
+      content="AutoService Gestão de Oficina - Dashboard, clientes e veículos."
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <aside class="sidebar" aria-label="Barra lateral">
+        <div class="brand-box">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 4h-4a2 2 0 0 0-2 2v2H6a2 2 0 0 0-2 2v3h16v-3a2 2 0 0 0-2-2h-2V6a2 2 0 0 0-2-2Z"/>
+              <path d="M4 15h16v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3Z"/>
+              <path d="M7.5 12h9"/>
+            </svg>
+          </div>
+          <div class="brand-copy">
+            <strong>AutoService</strong>
+            <span>Gestão de Oficina</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Navegação principal">
+          <button type="button" class="nav-item selected" data-route="dashboard">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10.5V20h14v-9.5"/><path d="M9 20v-6h6v6"/></svg>
+            <span>Dashboard</span>
+          </button>
+          <button type="button" class="nav-item" data-route="clients">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 19v-1a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v1"/><circle cx="10" cy="7" r="3"/><path d="M20 19v-1a4 4 0 0 0-3-3.87"/><path d="M16 4.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Clientes</span>
+          </button>
+          <button type="button" class="nav-item" data-route="vehicles">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 14h2l1.3-4.3A2 2 0 0 1 8.2 8h7.6a2 2 0 0 1 1.9 1.7L19 14h2"/><path d="M7 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/><path d="M5 14v-1.5A1.5 1.5 0 0 1 6.5 11h11A1.5 1.5 0 0 1 19 12.5V14"/></svg>
+            <span>Veículos</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="footer-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h-4a2 2 0 0 0-2 2v2H6a2 2 0 0 0-2 2v3h16v-3a2 2 0 0 0-2-2h-2V6a2 2 0 0 0-2-2Z"/><path d="M4 15h16v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3Z"/><path d="M7.5 12h9"/></svg>
+          </div>
+          <div class="footer-copy">
+            <strong>AutoService</strong>
+            <span>Sistema de gerenciamento</span>
+          </div>
+          <span class="footer-version">v1.0.0</span>
+        </div>
+      </aside>
+
+      <div class="workspace">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+          <div class="topbar-copy">
+            <h1 id="page-title">Dashboard</h1>
+            <p id="page-subtitle">Visão geral da oficina</p>
+          </div>
+          <div class="system-indicator"><span class="status-dot"></span> Sistema Online</div>
+        </header>
+
+        <main id="content" tabindex="-1"></main>
+      </div>
+
+      <button type="button" class="sidebar-overlay" aria-label="Fechar menu"></button>
+    </div>
+
+    <div id="toasts" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
