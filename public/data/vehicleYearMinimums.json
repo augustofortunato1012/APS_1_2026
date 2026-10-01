@@ -1,0 +1,137 @@
+{
+  "Audi": {
+    "A3": null,
+    "A4": null,
+    "A5": null,
+    "A6": null,
+    "Q3": null,
+    "Q5": null,
+    "Q7": null
+  },
+  "BMW": {
+    "Série 1": null,
+    "Série 3": null,
+    "Série 5": null,
+    "X1": null,
+    "X3": null,
+    "X5": null
+  },
+  "BYD": {
+    "Dolphin": null,
+    "Dolphin Mini": null,
+    "King": null,
+    "Song Plus": null,
+    "Yuan Plus": null
+  },
+  "Chevrolet": {
+    "Onix": null,
+    "Onix Plus": null,
+    "Tracker": null,
+    "Spin": null,
+    "Montana": null,
+    "S10": null
+  },
+  "Citroën": {
+    "C3": null,
+    "Aircross": null,
+    "Basalt": null,
+    "C4 Cactus": null
+  },
+  "Fiat": {
+    "Argo": null,
+    "Cronos": null,
+    "Fastback": null,
+    "Mobi": null,
+    "Pulse": null,
+    "Strada": null,
+    "Toro": null
+  },
+  "Ford": {
+    "Bronco Sport": null,
+    "Maverick": null,
+    "Ranger": null,
+    "Territory": null
+  },
+  "GWM": {
+    "Haval H6": null,
+    "Ora 03": null,
+    "Tank 300": null
+  },
+  "Honda": {
+    "Civic": 1972,
+    "City": 1981,
+    "HR-V": 1999,
+    "ZR-V": null,
+    "CR-V": null
+  },
+  "Hyundai": {
+    "Creta": null,
+    "HB20": null,
+    "HB20S": null,
+    "Tucson": null
+  },
+  "Jeep": {
+    "Compass": null,
+    "Commander": null,
+    "Renegade": null,
+    "Gladiator": null
+  },
+  "Kia": {
+    "Cerato": null,
+    "Niro": null,
+    "Sportage": null,
+    "Stonic": null
+  },
+  "Mercedes-Benz": {
+    "Classe A": null,
+    "Classe C": null,
+    "GLA": null,
+    "GLB": null,
+    "GLC": null
+  },
+  "Mitsubishi": {
+    "Eclipse Cross": null,
+    "L200 Triton": null,
+    "Outlander": null
+  },
+  "Nissan": {
+    "Kicks": null,
+    "Sentra": null,
+    "Versa": null,
+    "Frontier": null
+  },
+  "Peugeot": {
+    "208": null,
+    "2008": null,
+    "3008": null,
+    "Partner": null
+  },
+  "Renault": {
+    "Duster": null,
+    "Kwid": null,
+    "Oroch": null,
+    "Stepway": null
+  },
+  "Toyota": {
+    "Corolla": 1966,
+    "Corolla Cross": 2020,
+    "Yaris": 1999,
+    "Hilux": 1968,
+    "SW4": null
+  },
+  "Volkswagen": {
+    "Gol": null,
+    "Polo": null,
+    "Virtus": null,
+    "T-Cross": null,
+    "Nivus": null,
+    "Taos": null,
+    "Tiguan": null
+  },
+  "Volvo": {
+    "EX30": null,
+    "XC40": null,
+    "XC60": null,
+    "XC90": null
+  }
+}

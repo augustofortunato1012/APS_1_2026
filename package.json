@@ -9,6 +9,8 @@
     "start": "node dist/server.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.117.2",
+    "dotenv": "^18.0.5",
     "express": "^4.21.2"
   },
   "devDependencies": {

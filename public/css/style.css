@@ -393,6 +393,22 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
   color: var(--text-soft);
   font-size: 11px;
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  white-space: nowrap;
+}
+.chart-day label small {
+  color: var(--text-muted);
+  font-size: 9px;
+  font-weight: 500;
+}
+.chart-empty {
+  margin: 0 0 14px;
+  color: var(--text-soft);
+  font-size: 12px;
+  text-align: center;
 }
 
 .donut-panel { padding-bottom: 20px; }
@@ -603,6 +619,16 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
   border-collapse: collapse;
   min-width: 740px;
 }
+.detail-list-panel .table-wrap { overflow-x: hidden; padding-inline: 12px; }
+.client-vehicles-table { min-width: 0 !important; table-layout: fixed; }
+.client-vehicles-table th,
+.client-vehicles-table td { padding-inline: 8px; }
+.client-vehicles-table th:nth-child(1) { width: 24%; }
+.client-vehicles-table th:nth-child(2) { width: 17%; }
+.client-vehicles-table th:nth-child(3) { width: 17%; }
+.client-vehicles-table th:nth-child(4) { width: 18%; }
+.client-vehicles-table th:nth-child(5) { width: 24%; }
+.client-vehicles-table .table-actions { gap: 4px; }
 
 thead th {
   text-align: left;
@@ -1008,4 +1034,36 @@ dialog::backdrop {
   .modal-actions { flex-direction: column-reverse; }
   .modal-actions .button { width: 100%; }
   .detail-top { flex-wrap: wrap; }
+  .client-vehicles-table,
+  .client-vehicles-table tbody { display: block; }
+  .client-vehicles-table thead { display: none; }
+  .client-vehicles-table tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  .client-vehicles-table tbody td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-width: 0;
+    padding: 5px 0;
+    border: 0;
+    font-size: 12px;
+  }
+  .client-vehicles-table tbody td::before {
+    content: attr(data-label);
+    color: var(--text-soft);
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .client-vehicles-table tbody td[data-label="Veículo"],
+  .client-vehicles-table tbody td[data-label="Ações"] { grid-column: 1 / -1; }
+  .client-vehicles-table tbody td[data-label="Ações"] { justify-content: space-between; }
+  .client-vehicles-table .table-actions { gap: 6px; }
 }

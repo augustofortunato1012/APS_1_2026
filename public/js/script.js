@@ -1,60 +1,36 @@
-const clients = [
-  { id: '11111111-1111-4111-8111-111111111111', name: 'Carlos Silva', email: 'carlos@email.com', phone: '41999999999', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '22222222-2222-4222-8222-222222222222', name: 'Mariana Souza', email: 'mariana@email.com', phone: '41988888888', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '33333333-3333-4333-8333-333333333333', name: 'Rafael Oliveira', email: 'rafael@email.com', phone: '41977777777', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '44444444-4444-4444-8444-444444444444', name: 'Fernanda Lima', email: 'fernanda@email.com', phone: '41966666666', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '55555555-5555-4555-8555-555555555555', name: 'João Santos', email: 'joao@email.com', phone: '41955555555', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '66666666-6666-4666-8666-666666666666', name: 'Ana Costa', email: 'ana@email.com', phone: '41944444444', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '77777777-7777-4777-8777-777777777777', name: 'Pedro Almeida', email: 'pedro@email.com', phone: '41933333333', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '88888888-8888-4888-8888-888888888888', name: 'Juliana Martins', email: 'juliana@email.com', phone: '41922222222', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '99999999-9999-4999-8999-999999999999', name: 'Bruno Pereira', email: 'bruno@email.com', phone: '41911111111', active: false, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', name: 'Larissa Costa', email: 'larissa@email.com', phone: '41910101010', active: false, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb', name: 'Mateus Rocha', email: 'mateus@email.com', phone: '41909090909', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'cccccccc-cccc-4ccc-8ccc-cccccccccccc', name: 'Sofia Mendes', email: 'sofia@email.com', phone: '41908080808', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'dddddddd-dddd-4ddd-8ddd-dddddddddddd', name: 'Renato Nunes', email: 'renato@email.com', phone: '41907070707', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee', name: 'Camila Dias', email: 'camila@email.com', phone: '41906060606', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'ffffffff-ffff-4fff-8fff-ffffffffffff', name: 'Leandro Melo', email: 'leandro@email.com', phone: '41905050505', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '12121212-1212-4121-8121-121212121212', name: 'Patricia Souza', email: 'patricia@email.com', phone: '41904040404', active: false, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '13131313-1313-4131-8131-131313131313', name: 'Guilherme Azevedo', email: 'guilherme@email.com', phone: '41903030303', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '14141414-1414-4141-8141-141414141414', name: 'Viviane Rocha', email: 'viviane@email.com', phone: '41902020202', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '15151515-1515-4151-8151-151515151515', name: 'Thiago Barros', email: 'thiago@email.com', phone: '41901010101', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: '16161616-1616-4161-8161-161616161616', name: 'Isabela Moraes', email: 'isabela@email.com', phone: '41900000000', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' }
-];
-
-const vehicles = [
-  { id: 'a1111111-1111-4111-8111-111111111111', client_id: clients[0].id, brand: 'Volkswagen', model: 'Golf', year: 2020, license_plate: 'ABC1D23', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'a2222222-2222-4222-8222-222222222222', client_id: clients[0].id, brand: 'Honda', model: 'Civic', year: 2021, license_plate: 'DEF4G56', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'a3333333-3333-4333-8333-333333333333', client_id: clients[1].id, brand: 'Toyota', model: 'Corolla', year: 2019, license_plate: 'GHI7J89', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'a4444444-4444-4444-8444-444444444444', client_id: clients[3].id, brand: 'Hyundai', model: 'HB20', year: 2022, license_plate: 'JKL0M12', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'a5555555-5555-4555-8555-555555555555', client_id: clients[4].id, brand: 'Chevrolet', model: 'Onix', year: 2021, license_plate: 'MNO3P45', active: false, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'a6666666-6666-4666-8666-666666666666', client_id: clients[2].id, brand: 'Jeep', model: 'Compass', year: 2020, license_plate: 'QRS6T78', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'a7777777-7777-4777-8777-777777777777', client_id: clients[5].id, brand: 'Nissan', model: 'Kicks', year: 2023, license_plate: 'UVW8X12', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'a8888888-8888-4888-8888-888888888888', client_id: clients[6].id, brand: 'Volkswagen', model: 'T-Cross', year: 2022, license_plate: 'YZA4B56', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'a9999999-9999-4999-8999-999999999999', client_id: clients[7].id, brand: 'Ford', model: 'Ka', year: 2021, license_plate: 'BCD5E67', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'b1111111-1111-4111-8111-111111111111', client_id: clients[8].id, brand: 'Fiat', model: 'Uno', year: 2018, license_plate: 'EFG7H89', active: false, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'b2222222-2222-4222-8222-222222222222', client_id: clients[9].id, brand: 'Peugeot', model: '208', year: 2020, license_plate: 'HIJ9K01', active: false, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'b3333333-3333-4333-8333-333333333333', client_id: clients[10].id, brand: 'Renault', model: 'Logan', year: 2019, license_plate: 'KLM2N34', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'b4444444-4444-4444-8444-444444444444', client_id: clients[11].id, brand: 'BMW', model: '320i', year: 2022, license_plate: 'NOP4Q56', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'b5555555-5555-4555-8555-555555555555', client_id: clients[12].id, brand: 'Audi', model: 'A3', year: 2021, license_plate: 'QRS7T89', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'b6666666-6666-4666-8666-666666666666', client_id: clients[13].id, brand: 'Citroën', model: 'C3', year: 2023, license_plate: 'TUV8W10', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'b7777777-7777-4777-8777-777777777777', client_id: clients[14].id, brand: 'Mercedes', model: 'A 200', year: 2020, license_plate: 'XYZ0A12', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'b8888888-8888-4888-8888-888888888888', client_id: clients[15].id, brand: 'Toyota', model: 'Etios', year: 2017, license_plate: 'BCD2E34', active: false, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'b9999999-9999-4999-8999-999999999999', client_id: clients[16].id, brand: 'Volvo', model: 'V40', year: 2019, license_plate: 'FGH4I56', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'c1111111-1111-4111-8111-111111111111', client_id: clients[17].id, brand: 'Honda', model: 'Fit', year: 2021, license_plate: 'IJK6L78', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'c2222222-2222-4222-8222-222222222222', client_id: clients[18].id, brand: 'Chevrolet', model: 'Cruze', year: 2018, license_plate: 'LMN8O90', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'c3333333-3333-4333-8333-333333333333', client_id: clients[19].id, brand: 'Mitsubishi', model: 'Outlander', year: 2022, license_plate: 'OPQ1R23', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'c4444444-4444-4444-8444-444444444444', client_id: clients[0].id, brand: 'Mazda', model: '3', year: 2021, license_plate: 'DEF2G34', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'c5555555-5555-4555-8555-555555555555', client_id: clients[1].id, brand: 'Fiat', model: 'Pulse', year: 2023, license_plate: 'GHI4J56', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'c6666666-6666-4666-8666-666666666666', client_id: clients[2].id, brand: 'BMW', model: 'X1', year: 2024, license_plate: 'JKL6M78', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' },
-  { id: 'c7777777-7777-4777-8777-777777777777', client_id: clients[3].id, brand: 'Porsche', model: 'Macan', year: 2023, license_plate: 'MNO8P90', active: true, created_at: '2024-03-10T14:30:00.000Z', updated_at: '2024-03-10T14:30:00.000Z' }
-];
+let clients = [];
+let vehicles = [];
+let vehicleYearMinimums = {};
 
 const state = {
-  route: 'dashboard',
   filter: '',
   currentPage: 1,
   pageSize: 8,
 };
+
+async function apiRequest(path, options = {}) {
+  const response = await fetch(path, {
+    ...options,
+    headers: {
+      ...(options.body ? { 'Content-Type': 'application/json' } : {}),
+      ...options.headers,
+    },
+  });
+
+  if (response.status === 204) return null;
+  const result = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(result.message || 'Não foi possível concluir a operação.');
+  return result;
+}
+
+async function loadData() {
+  const [clientList, vehicleList] = await Promise.all([
+    apiRequest('/api/clients'),
+    apiRequest('/api/vehicles'),
+  ]);
+  clients = Array.isArray(clientList) ? clientList : [];
+  vehicles = Array.isArray(vehicleList) ? vehicleList : [];
+}
 
 const titles = {
   dashboard: ['Dashboard', 'Visão geral da oficina'],
@@ -113,6 +89,161 @@ function formatPhone(value) {
     return `(${digits.slice(0,2)}) ${digits.slice(2,6)}-${digits.slice(6)}`;
   }
   return value || '—';
+}
+
+function formatPhoneInput(value) {
+  const digits = String(value || '').replace(/\D/g, '').slice(0, 11);
+  if (!digits) return '';
+  if (digits.length <= 2) return `(${digits}`;
+  if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+}
+
+const validBrazilianDdds = new Set([
+  '11', '12', '13', '14', '15', '16', '17', '18', '19', '21', '22', '24', '27', '28',
+  '31', '32', '33', '34', '35', '37', '38', '41', '42', '43', '44', '45', '46', '47', '48', '49',
+  '51', '53', '54', '55', '61', '62', '63', '64', '65', '66', '67', '68', '69',
+  '71', '73', '74', '75', '77', '79', '81', '82', '83', '84', '85', '86', '87', '88', '89',
+  '91', '92', '93', '94', '95', '96', '97', '98', '99',
+]);
+
+function getPhoneValidationMessage(value) {
+  const phone = String(value || '');
+  if (!/^[\d()\s-]+$/.test(phone)) return 'Informe um telefone válido no formato (99) 99999-9999.';
+  const digits = phone.replace(/\D/g, '');
+  if (!/^\d{11}$/.test(digits)) return 'Informe um telefone válido no formato (99) 99999-9999.';
+  if (!validBrazilianDdds.has(digits.slice(0, 2))) return 'Informe um DDD brasileiro válido.';
+  if (digits[2] !== '9') return 'Informe um telefone válido no formato (99) 99999-9999.';
+  return null;
+}
+
+function normalizeLicensePlate(value) {
+  return String(value || '').trim().slice(0, 7).toUpperCase();
+}
+
+function isValidLicensePlate(value) {
+  return /^[A-Z]{3}(?:\d{4}|\d[A-Z]\d{2})$/.test(value);
+}
+
+function renderDatalistOptions(options) {
+  return options.map((option) => `<option value="${escapeHtml(option)}"></option>`).join('');
+}
+
+function getYearSuggestions(minimum, maximum) {
+  const years = [];
+  for (let year = maximum; year >= minimum; year -= 1) years.push(String(year));
+  return years;
+}
+
+function getVehicleYearMinimum(brand, model) {
+  const brandEntry = Object.entries(vehicleYearMinimums).find(([name]) => normalize(name) === normalize(brand));
+  if (!brandEntry) return null;
+
+  const modelEntry = Object.entries(brandEntry[1]).find(([name]) => normalize(name) === normalize(model));
+  if (!modelEntry) return null;
+
+  return { brand: brandEntry[0], model: modelEntry[0], year: modelEntry[1] };
+}
+
+function getVehicleCatalogBrand(brand) {
+  return Object.keys(vehicleYearMinimums).find((name) => normalize(name) === normalize(brand)) || null;
+}
+
+function getVehicleModels(brand) {
+  const catalogBrand = getVehicleCatalogBrand(brand);
+  return catalogBrand ? Object.keys(vehicleYearMinimums[catalogBrand]) : [];
+}
+
+function getVehicleModelMismatch(brand, model) {
+  const catalogBrand = Object.keys(vehicleYearMinimums).find((name) => normalize(name) === normalize(brand));
+  if (!catalogBrand) return null;
+
+  const modelOwners = Object.entries(vehicleYearMinimums).flatMap(([catalogBrand, models]) => {
+    const catalogModel = Object.keys(models).find((name) => normalize(name) === normalize(model));
+    return catalogModel ? [{ brand: catalogBrand, model: catalogModel }] : [];
+  });
+
+  if (!modelOwners.length || modelOwners.some((owner) => normalize(owner.brand) === normalize(brand))) return null;
+  return { ...modelOwners[0], requestedBrand: catalogBrand };
+}
+
+function hasLetters(value) {
+  return /\p{L}/u.test(value);
+}
+
+function hasLettersOrNumbers(value) {
+  return /[\p{L}\p{N}]/u.test(value);
+}
+
+function isValidClientName(value) {
+  return value.length <= 120 && hasLetters(value) && /^[\p{L}\p{M}\s'’.\-]+$/u.test(value);
+}
+
+function getRecentRecords(records, limit = 4) {
+  return [...records]
+    .sort((first, second) => new Date(second.created_at) - new Date(first.created_at))
+    .slice(0, limit);
+}
+
+function formatRelativeTime(value) {
+  const createdAt = new Date(value);
+  if (Number.isNaN(createdAt.getTime())) return '';
+
+  const elapsedMinutes = Math.max(0, Math.floor((Date.now() - createdAt.getTime()) / 60000));
+  if (elapsedMinutes < 1) return 'agora';
+  if (elapsedMinutes < 60) return `há ${elapsedMinutes} min`;
+
+  const elapsedHours = Math.floor(elapsedMinutes / 60);
+  if (elapsedHours < 24) return `há ${elapsedHours} h`;
+
+  const elapsedDays = Math.floor(elapsedHours / 24);
+  if (elapsedDays < 30) return `há ${elapsedDays} ${elapsedDays === 1 ? 'dia' : 'dias'}`;
+
+  const elapsedMonths = Math.floor(elapsedDays / 30);
+  if (elapsedMonths < 12) return `há ${elapsedMonths} ${elapsedMonths === 1 ? 'mês' : 'meses'}`;
+  const elapsedYears = Math.floor(elapsedMonths / 12);
+  return `há ${elapsedYears} ${elapsedYears === 1 ? 'ano' : 'anos'}`;
+}
+
+function getMonthlyChange(records) {
+  const now = new Date();
+  const thisMonth = records.filter((record) => {
+    const createdAt = new Date(record.created_at);
+    return createdAt.getFullYear() === now.getFullYear() && createdAt.getMonth() === now.getMonth();
+  }).length;
+  const previousMonthDate = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+  const previousMonth = records.filter((record) => {
+    const createdAt = new Date(record.created_at);
+    return createdAt.getFullYear() === previousMonthDate.getFullYear()
+      && createdAt.getMonth() === previousMonthDate.getMonth();
+  }).length;
+
+  if (previousMonth === 0) {
+    return thisMonth > 0 ? `Novos este mês: ${thisMonth}` : '0% este mês';
+  }
+
+  const change = Math.round(((thisMonth - previousMonth) / previousMonth) * 100);
+  return `${change > 0 ? '+' : ''}${change}% este mês`;
+}
+
+function getLastSevenDays() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  return Array.from({ length: 7 }, (_, index) => {
+    const date = new Date(today);
+    date.setDate(today.getDate() - 6 + index);
+    const countCreatedOnDay = (records) => records.filter((record) => {
+      const createdAt = new Date(record.created_at);
+      return !Number.isNaN(createdAt.getTime()) && createdAt.toDateString() === date.toDateString();
+    }).length;
+
+    return {
+      date,
+      clients: countCreatedOnDay(clients),
+      vehicles: countCreatedOnDay(vehicles),
+    };
+  });
 }
 
 function formatDate(dateString) {
@@ -180,32 +311,39 @@ function showToast(message, type = 'success') {
 }
 
 function renderDashboard() {
-  const activeClients = clients.filter((client) => client.active).length;
-  const activeVehicles = vehicles.filter((vehicle) => vehicle.active).length;
-  const recentClients = clients.slice(0, 4);
-  const recentVehicles = vehicles.slice(0, 4);
+  const activeClients = clients.filter((client) => client.active === true).length;
+  const activeVehicles = vehicles.filter((vehicle) => vehicle.active === true).length;
+  const clientActivePercent = clients.length ? Math.round((activeClients / clients.length) * 100) : 0;
+  const vehicleActivePercent = vehicles.length ? Math.round((activeVehicles / vehicles.length) * 100) : 0;
+  const recentClients = getRecentRecords(clients);
+  const recentVehicles = getRecentRecords(vehicles);
+  const dailyRegistrations = getLastSevenDays();
+  const maxDailyRegistrations = Math.max(1, ...dailyRegistrations.flatMap((day) => [day.clients, day.vehicles]));
+  const hasRecentRegistrations = dailyRegistrations.some((day) => day.clients || day.vehicles);
+  const inactiveVehicles = vehicles.length - activeVehicles;
+  const vehicleActivePercentOfChart = vehicles.length ? (activeVehicles / vehicles.length) * 100 : 0;
 
   const markup = `
     <section class="stats-grid">
       <article class="stat-card">
         <div class="card-head"><span>Clientes</span><span class="card-icon">${icon('users')}</span></div>
         <strong>${clients.length}</strong>
-        <small>+12% este mês</small>
+        <small>${getMonthlyChange(clients)}</small>
       </article>
       <article class="stat-card">
         <div class="card-head"><span>Veículos</span><span class="card-icon">${icon('car')}</span></div>
         <strong>${vehicles.length}</strong>
-        <small>+8% este mês</small>
+        <small>${getMonthlyChange(vehicles)}</small>
       </article>
       <article class="stat-card success">
         <div class="card-head"><span>Clientes Ativos</span><span class="card-icon">${icon('users')}</span></div>
         <strong>${activeClients}</strong>
-        <small>${Math.round((activeClients / clients.length) * 100)}% do total</small>
+        <small>${clientActivePercent}% do total</small>
       </article>
       <article class="stat-card success">
         <div class="card-head"><span>Veículos Ativos</span><span class="card-icon">${icon('car')}</span></div>
         <strong>${activeVehicles}</strong>
-        <small>${Math.round((activeVehicles / vehicles.length) * 100)}% do total</small>
+        <small>${vehicleActivePercent}% do total</small>
       </article>
     </section>
 
@@ -219,34 +357,43 @@ function renderDashboard() {
           </div>
         </div>
         <div class="bar-chart">
-          ${['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'].map((day, index) => `
+          ${dailyRegistrations.map((day) => {
+            const weekday = day.date.toLocaleDateString('pt-BR', { weekday: 'short' }).replace('.', '');
+            const dateLabel = day.date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+            const clientHeight = day.clients ? Math.max(8, (day.clients / maxDailyRegistrations) * 100) : 0;
+            const vehicleHeight = day.vehicles ? Math.max(8, (day.vehicles / maxDailyRegistrations) * 100) : 0;
+            return `
             <div class="chart-day">
               <div class="bars">
-                <span class="bar blue" style="height:${[48, 62, 70, 56, 82, 66, 78][index]}%"></span>
-                <span class="bar dark" style="height:${[40, 54, 58, 48, 64, 52, 60][index]}%"></span>
+                <span class="bar blue" style="height:${clientHeight}%" title="${day.clients} cliente(s)"></span>
+                <span class="bar dark" style="height:${vehicleHeight}%" title="${day.vehicles} veículo(s)"></span>
               </div>
-              <label>${day}</label>
+              <label><span>${weekday}</span><small>${dateLabel}</small></label>
             </div>
-          `).join('')}
+          `;
+          }).join('')}
         </div>
+        ${hasRecentRegistrations ? '' : '<p class="chart-empty">Nenhum cadastro nos últimos 7 dias.</p>'}
       </article>
 
       <article class="panel donut-panel">
         <div class="panel-header">
           <h3>Status dos veículos</h3>
         </div>
-        <div class="donut-wrap">
-          <div class="donut-chart">
-            <div class="donut-inner">
-              <strong>${vehicles.length}</strong>
-              <span>Veículos</span>
+        ${vehicles.length ? `
+          <div class="donut-wrap">
+            <div class="donut-chart" style="background: conic-gradient(var(--primary) 0 ${vehicleActivePercentOfChart}%, #dfe9f7 ${vehicleActivePercentOfChart}% 100%)">
+              <div class="donut-inner">
+                <strong>${vehicles.length}</strong>
+                <span>Veículos</span>
+              </div>
             </div>
           </div>
-        </div>
-        <ul class="status-list">
-          <li><span><span class="dot success"></span>Ativos</span><strong>${activeVehicles}</strong></li>
-          <li><span><span class="dot danger"></span>Inativos</span><strong>${vehicles.length - activeVehicles}</strong></li>
-        </ul>
+          <ul class="status-list">
+            <li><span><span class="dot success"></span>Ativos</span><strong>${activeVehicles}</strong></li>
+            <li><span><span class="dot danger"></span>Inativos</span><strong>${inactiveVehicles}</strong></li>
+          </ul>
+        ` : '<div class="empty-state"><h3>Nenhum veículo cadastrado.</h3><p>Os indicadores aparecerão após o primeiro cadastro.</p></div>'}
       </article>
     </section>
 
@@ -257,7 +404,7 @@ function renderDashboard() {
           <a class="text-link" href="#/clients">Ver todos ${icon('arrowRight')}</a>
         </div>
         <div class="mini-list">
-          ${recentClients.map((client) => {
+          ${recentClients.length ? recentClients.map((client) => {
             const initials = client.name.split(' ').map((part) => part[0]).slice(0,2).join('').toUpperCase();
             return `
               <div class="mini-list-item">
@@ -265,11 +412,11 @@ function renderDashboard() {
                 <div class="mini-text">
                   <strong>${escapeHtml(client.name)}</strong>
                   <a href="mailto:${escapeHtml(client.email)}">${escapeHtml(client.email)}</a>
-                  <span>há 934 dias</span>
+                  <span>${formatRelativeTime(client.created_at)}</span>
                 </div>
               </div>
           `;
-          }).join('')}
+          }).join('') : '<div class="empty-state"><h3>Nenhum cliente cadastrado.</h3></div>'}
         </div>
       </article>
 
@@ -279,16 +426,16 @@ function renderDashboard() {
           <a class="text-link" href="#/vehicles">Ver todos ${icon('arrowRight')}</a>
         </div>
         <div class="mini-list">
-          ${recentVehicles.map((vehicle) => `
+          ${recentVehicles.length ? recentVehicles.map((vehicle) => `
             <div class="mini-list-item">
               <div class="mini-car">${icon('car')}</div>
               <div class="mini-text">
                 <strong>${escapeHtml(vehicle.model)}</strong>
                 <span>${escapeHtml(vehicle.license_plate)}</span>
-                <small>há 934 dias</small>
+                <small>${formatRelativeTime(vehicle.created_at)}</small>
               </div>
             </div>
-          `).join('')}
+          `).join('') : '<div class="empty-state"><h3>Nenhum veículo cadastrado.</h3></div>'}
         </div>
       </article>
     </section>
@@ -321,6 +468,9 @@ function buildListPage(type) {
 
   const title = type === 'clients' ? 'Clientes' : 'Veículos';
   const buttonLabel = type === 'clients' ? 'Novo Cliente' : 'Novo Veículo';
+  const emptyMessage = list.length === 0
+    ? `Nenhum ${type === 'clients' ? 'cliente' : 'veículo'} cadastrado.`
+    : 'Nenhum registro encontrado.';
 
   const tableRows = type === 'clients'
     ? currentItems.map((client) => `
@@ -397,7 +547,7 @@ function buildListPage(type) {
             </tr>
           </thead>
           <tbody>
-            ${tableRows || '<tr><td colspan="7"><div class="empty-state"><h3>Nenhum registro encontrado.</h3><p>Atualize a busca para continuar.</p></div></td></tr>'}
+            ${tableRows || `<tr><td colspan="7"><div class="empty-state"><h3>${emptyMessage}</h3><p>${list.length === 0 ? 'Cadastre o primeiro registro para começar.' : 'Atualize a busca para continuar.'}</p></div></td></tr>`}
           </tbody>
         </table>
       </div>
@@ -478,13 +628,13 @@ function renderClientDetail(clientId) {
           <button type="button" class="button primary" data-action="create" data-entity="vehicles" data-client-id="${client.id}">${icon('plus')} Novo Veículo</button>
         </div>
         ${vehicleList.length
-          ? `<div class="table-wrap"><table><thead><tr><th>Veículo</th><th>Marca</th><th>Placa</th><th>Status</th><th class="actions-col">Ações</th></tr></thead><tbody>${vehicleList.map((vehicle) => `
+              ? `<div class="table-wrap"><table class="client-vehicles-table"><thead><tr><th>Veículo</th><th>Marca</th><th>Placa</th><th>Status</th><th class="actions-col">Ações</th></tr></thead><tbody>${vehicleList.map((vehicle) => `
               <tr>
-                <td><strong>${escapeHtml(vehicle.model)}</strong></td>
-                <td>${escapeHtml(vehicle.brand)}</td>
-                <td><span class="plate-tag">${escapeHtml(vehicle.license_plate)}</span></td>
-                <td><span class="badge ${getBadgeClass(vehicle.active)}"><span class="dot ${vehicle.active ? 'success' : 'danger'}"></span>${getStatusLabel(vehicle.active)}</span></td>
-                <td><div class="table-actions"><button type="button" class="row-action" data-action="view" data-entity="vehicles" data-id="${vehicle.id}">${icon('view')}</button><button type="button" class="row-action" data-action="edit" data-entity="vehicles" data-id="${vehicle.id}">${icon('edit')}</button><button type="button" class="row-action danger" data-action="delete" data-entity="vehicles" data-id="${vehicle.id}">${icon('trash')}</button></div></td>
+                <td data-label="Veículo"><strong>${escapeHtml(vehicle.model)}</strong></td>
+                <td data-label="Marca">${escapeHtml(vehicle.brand)}</td>
+                <td data-label="Placa"><span class="plate-tag">${escapeHtml(vehicle.license_plate)}</span></td>
+                <td data-label="Status"><span class="badge ${getBadgeClass(vehicle.active)}"><span class="dot ${vehicle.active ? 'success' : 'danger'}"></span>${getStatusLabel(vehicle.active)}</span></td>
+                <td data-label="Ações" class="actions-col"><div class="table-actions"><button type="button" class="row-action" data-action="view" data-entity="vehicles" data-id="${vehicle.id}" aria-label="Visualizar veículo">${icon('view')}</button><button type="button" class="row-action" data-action="edit" data-entity="vehicles" data-id="${vehicle.id}" aria-label="Editar veículo">${icon('edit')}</button><button type="button" class="row-action danger" data-action="delete" data-entity="vehicles" data-id="${vehicle.id}" aria-label="Excluir veículo">${icon('trash')}</button></div></td>
               </tr>
             `).join('')}</tbody></table></div>`
           : '<div class="empty-state"><h3>Nenhum veículo cadastrado.</h3><p>Cadastre um veículo para este cliente.</p></div>'}
@@ -559,6 +709,12 @@ function openModal(type, mode, recordId = null, clientId = null) {
   const title = mode === 'create'
     ? (isClient ? 'Cadastrar Cliente' : 'Cadastrar Veículo')
     : (isClient ? 'Editar Cliente' : 'Editar Veículo');
+  const initialBrand = getVehicleCatalogBrand(payload?.brand);
+  const initialModelSuggestions = getVehicleModels(initialBrand);
+  const initialYearMinimum = getVehicleYearMinimum(payload?.brand, payload?.model);
+  const initialYearMinimumValue = initialYearMinimum?.year || 1900;
+  const maximumYear = new Date().getFullYear() + 1;
+  const initialYearSuggestions = getYearSuggestions(initialYearMinimumValue, maximumYear);
 
   const formMarkup = isClient
     ? `
@@ -573,8 +729,8 @@ function openModal(type, mode, recordId = null, clientId = null) {
             <input name="email" type="email" value="${escapeHtml(payload?.email || '')}" required />
           </label>
           <label class="form-field">
-            <span>Telefone</span>
-            <input name="phone" type="tel" value="${escapeHtml(payload?.phone || '')}" maxlength="20" />
+            <span>Telefone *</span>
+            <input name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(99) 99999-9999" value="${escapeHtml(payload?.phone || '')}" maxlength="15" required />
           </label>
           <label class="form-field">
             <span>Status</span>
@@ -603,19 +759,22 @@ function openModal(type, mode, recordId = null, clientId = null) {
           </label>
           <label class="form-field">
             <span>Marca *</span>
-            <input name="brand" type="text" value="${escapeHtml(payload?.brand || '')}" required />
+            <input name="brand" type="text" list="vehicle-brand-options" value="${escapeHtml(payload?.brand || '')}" required />
+            <datalist id="vehicle-brand-options">${renderDatalistOptions(Object.keys(vehicleYearMinimums))}</datalist>
           </label>
           <label class="form-field">
             <span>Modelo *</span>
-            <input name="model" type="text" value="${escapeHtml(payload?.model || '')}" required />
+            <input name="model" type="text" list="vehicle-model-options" value="${escapeHtml(payload?.model || '')}" required />
+            <datalist id="vehicle-model-options">${renderDatalistOptions(initialModelSuggestions)}</datalist>
           </label>
           <label class="form-field">
-            <span>Ano</span>
-            <input name="year" type="number" min="1886" max="2100" value="${payload?.year ?? ''}" />
+            <span>Ano *</span>
+            <input name="year" type="number" list="vehicle-year-options" min="${initialYearMinimumValue}" max="${maximumYear}" placeholder="${initialYearMinimumValue} a ${maximumYear}" step="1" value="${payload?.year ?? ''}" required />
+            <datalist id="vehicle-year-options">${renderDatalistOptions(initialYearSuggestions)}</datalist>
           </label>
           <label class="form-field">
             <span>Placa *</span>
-            <input name="license_plate" type="text" value="${escapeHtml(payload?.license_plate || '')}" required />
+            <input name="license_plate" type="text" placeholder="ABC1D23 ou ABC1234" value="${escapeHtml(payload?.license_plate || '')}" maxlength="7" autocomplete="off" required />
           </label>
           <label class="form-field">
             <span>Status</span>
@@ -657,90 +816,163 @@ function openModal(type, mode, recordId = null, clientId = null) {
 
   const form = dialog.querySelector('form');
   const errorBox = dialog.querySelector('.form-error');
+  form.noValidate = true;
 
-  form.addEventListener('submit', (event) => {
+  if (isClient) {
+    const phoneInput = form.querySelector('[name="phone"]');
+    phoneInput.value = formatPhoneInput(phoneInput.value);
+    phoneInput.addEventListener('input', () => {
+      phoneInput.value = formatPhoneInput(phoneInput.value);
+    });
+  } else {
+    const brandInput = form.querySelector('[name="brand"]');
+    const modelInput = form.querySelector('[name="model"]');
+    const modelOptions = form.querySelector('#vehicle-model-options');
+    const yearInput = form.querySelector('[name="year"]');
+    const yearOptions = form.querySelector('#vehicle-year-options');
+    const plateInput = form.querySelector('[name="license_plate"]');
+    const updateYearSuggestions = () => {
+      const minimum = getVehicleYearMinimum(brandInput.value, modelInput.value);
+      const minimumYear = minimum?.year || 1900;
+      const currentMaximumYear = new Date().getFullYear() + 1;
+      yearInput.min = String(minimumYear);
+      yearInput.max = String(currentMaximumYear);
+      yearInput.placeholder = `${minimumYear} a ${currentMaximumYear}`;
+      yearOptions.innerHTML = renderDatalistOptions(getYearSuggestions(minimumYear, currentMaximumYear));
+
+      if (yearInput.value) {
+        const currentYear = Number(yearInput.value);
+        if (!Number.isInteger(currentYear) || currentYear < minimumYear || currentYear > currentMaximumYear) {
+          yearInput.value = '';
+        }
+      }
+    };
+    let previousBrand = normalize(brandInput.value);
+    const updateModelOptions = () => {
+      if (normalize(brandInput.value) !== previousBrand && modelInput.value && getVehicleModelMismatch(brandInput.value, modelInput.value)) {
+        modelInput.value = '';
+      }
+      previousBrand = normalize(brandInput.value);
+      modelOptions.innerHTML = renderDatalistOptions(getVehicleModels(brandInput.value));
+      updateYearSuggestions();
+    };
+
+    brandInput.addEventListener('input', updateModelOptions);
+    modelInput.addEventListener('input', updateYearSuggestions);
+    updateYearSuggestions();
+    plateInput.value = normalizeLicensePlate(plateInput.value);
+    plateInput.addEventListener('input', () => {
+      plateInput.value = normalizeLicensePlate(plateInput.value);
+    });
+  }
+
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const formData = new FormData(form);
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+
+    const showFormError = (message) => {
+      errorBox.hidden = false;
+      errorBox.textContent = message;
+      submitButton.disabled = false;
+    };
+
+    const saveRecord = async (data) => {
+      try {
+        await apiRequest(`/api/${type}${recordId ? `/${recordId}` : ''}`, {
+          method: mode === 'create' ? 'POST' : 'PUT',
+          body: JSON.stringify(data),
+        });
+        await loadData();
+        dialog.close();
+        showToast(`${isClient ? 'Cliente' : 'Veículo'} ${mode === 'create' ? 'cadastrado' : 'atualizado'} com sucesso!`);
+        render();
+      } catch (error) {
+        showFormError(error instanceof Error ? error.message : 'Não foi possível salvar o registro.');
+      }
+    };
 
     if (isClient) {
       const name = String(formData.get('name') || '').trim();
-      const email = String(formData.get('email') || '').trim();
+      const email = String(formData.get('email') || '').trim().toLowerCase();
       const phone = String(formData.get('phone') || '').trim();
       const active = String(formData.get('active') || 'true') === 'true';
 
-      if (!name) {
-        errorBox.hidden = false;
-        errorBox.textContent = 'Nome é obrigatório.';
+      if (!isValidClientName(name)) {
+        showFormError('Informe um nome válido.');
         return;
       }
       if (!email) {
-        errorBox.hidden = false;
-        errorBox.textContent = 'E-mail é obrigatório.';
+        showFormError('E-mail é obrigatório.');
         return;
       }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        errorBox.hidden = false;
-        errorBox.textContent = 'Informe um e-mail válido.';
+      if (email.length > 150 || !/^[^\s@.][^\s@]*@[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$/i.test(email)) {
+        showFormError('Informe um e-mail válido.');
+        return;
+      }
+      const phoneError = getPhoneValidationMessage(phone);
+      if (phoneError) {
+        showFormError(phoneError);
         return;
       }
 
-      const payloadData = {
-        id: recordId || crypto.randomUUID(),
+      await saveRecord({
         name,
         email,
-        phone: phone.replace(/\D/g, ''),
+        phone,
         active,
-        created_at: payload?.created_at || new Date().toISOString(),
-        updated_at: new Date().toISOString(),
-      };
-
-      if (mode === 'create') {
-        clients.unshift(payloadData);
-        showToast('Cliente cadastrado com sucesso!', 'success');
-      } else {
-        const index = clients.findIndex((client) => client.id === recordId);
-        if (index >= 0) clients[index] = { ...clients[index], ...payloadData, id: recordId };
-        showToast('Cliente atualizado com sucesso!', 'success');
-      }
+      });
     } else {
       const clientIdValue = String(formData.get('client_id') || '').trim();
       const brand = String(formData.get('brand') || '').trim();
       const model = String(formData.get('model') || '').trim();
-      const plate = String(formData.get('license_plate') || '').trim().toUpperCase();
+      const plate = normalizeLicensePlate(formData.get('license_plate'));
       const yearValue = formData.get('year');
-      const year = yearValue === null || yearValue === '' ? null : Number(yearValue);
+      const year = yearValue === null || yearValue === '' ? Number.NaN : Number(yearValue);
       const active = String(formData.get('active') || 'true') === 'true';
+      const yearMinimum = getVehicleYearMinimum(brand, model);
+      const minimumYear = yearMinimum?.year || 1900;
 
       if (!clientIdValue || !brand || !model || !plate) {
-        errorBox.hidden = false;
-        errorBox.textContent = 'Preencha os campos obrigatórios do veículo.';
+        showFormError('Preencha os campos obrigatórios do veículo.');
+        return;
+      }
+      if (!hasLetters(brand) || brand.length > 80) {
+        showFormError('Informe uma marca válida.');
+        return;
+      }
+      if (!hasLettersOrNumbers(model) || model.length > 80) {
+        showFormError('Informe um modelo válido.');
+        return;
+      }
+      const modelMismatch = getVehicleModelMismatch(brand, model);
+      if (modelMismatch) {
+        showFormError(`O modelo ${modelMismatch.model} não pertence à marca ${modelMismatch.requestedBrand}.`);
+        return;
+      }
+      if (!Number.isInteger(year) || year < minimumYear || year > new Date().getFullYear() + 1) {
+        if (yearMinimum && Number.isInteger(year) && year < yearMinimum.year) {
+          showFormError(`O ${yearMinimum.brand} ${yearMinimum.model} deve possuir ano igual ou posterior a ${yearMinimum.year}.`);
+          return;
+        }
+        showFormError('Informe um ano inteiro entre 1900 e o próximo ano.');
+        return;
+      }
+      if (!isValidLicensePlate(plate)) {
+        showFormError('Informe uma placa brasileira válida.');
         return;
       }
 
-      const payloadData = {
-        id: recordId || crypto.randomUUID(),
+      await saveRecord({
         client_id: clientIdValue,
         brand,
         model,
         year,
         license_plate: plate,
         active,
-        created_at: payload?.created_at || new Date().toISOString(),
-        updated_at: new Date().toISOString(),
-      };
-
-      if (mode === 'create') {
-        vehicles.unshift(payloadData);
-        showToast('Veículo cadastrado com sucesso!', 'success');
-      } else {
-        const index = vehicles.findIndex((vehicle) => vehicle.id === recordId);
-        if (index >= 0) vehicles[index] = { ...vehicles[index], ...payloadData, id: recordId };
-        showToast('Veículo atualizado com sucesso!', 'success');
-      }
+      });
     }
-
-    dialog.close();
-    render();
   });
 }
 
@@ -778,25 +1010,19 @@ function confirmDelete(type, recordId) {
   dialog.addEventListener('close', () => dialog.remove());
   dialog.showModal();
 
-  dialog.querySelector('#confirm-delete').addEventListener('click', () => {
-    if (isClient) {
-      const hasLinkedVehicles = vehicles.some((vehicle) => vehicle.client_id === recordId);
-      if (hasLinkedVehicles) {
-        showToast('Este cliente possui veículos vinculados. Remova os veículos antes de excluir.', 'error');
-        dialog.close();
-        return;
-      }
-      const index = clients.findIndex((client) => client.id === recordId);
-      if (index >= 0) clients.splice(index, 1);
-      showToast('Cliente excluído com sucesso!', 'success');
-    } else {
-      const index = vehicles.findIndex((vehicle) => vehicle.id === recordId);
-      if (index >= 0) vehicles.splice(index, 1);
-      showToast('Veículo excluído com sucesso!', 'success');
+  dialog.querySelector('#confirm-delete').addEventListener('click', async (event) => {
+    const button = event.currentTarget;
+    button.disabled = true;
+    try {
+      await apiRequest(`/api/${type}/${recordId}`, { method: 'DELETE' });
+      await loadData();
+      dialog.close();
+      showToast(`${isClient ? 'Cliente' : 'Veículo'} excluído com sucesso!`);
+      render();
+    } catch (error) {
+      dialog.close();
+      showToast(error instanceof Error ? error.message : 'Não foi possível excluir o registro.', 'error');
     }
-
-    dialog.close();
-    render();
   });
 }
 
@@ -833,7 +1059,6 @@ function handleActionClick(event) {
 
 function render() {
   const { route, detailId } = getRouteData();
-  state.route = route;
   renderHeader(route);
   closeSidebar();
 
@@ -865,11 +1090,23 @@ function render() {
   document.getElementById('content').innerHTML = '<div class="empty-state"><h3>Página não encontrada.</h3><p>Use o menu para continuar.</p></div>';
 }
 
+async function refreshDashboard() {
+  try {
+    await loadData();
+  } catch (error) {
+    showToast(error instanceof Error ? error.message : 'Não foi possível atualizar o Dashboard.', 'error');
+  }
+  render();
+}
+
 document.addEventListener('click', (event) => {
   const nav = event.target.closest('.nav-item');
   if (nav) {
     const route = nav.dataset.route;
-    if (route === 'dashboard') window.location.hash = '#/dashboard';
+    if (route === 'dashboard') {
+      if (getRouteData().route === 'dashboard') refreshDashboard();
+      else window.location.hash = '#/dashboard';
+    }
     if (route === 'clients') window.location.hash = '#/clients';
     if (route === 'vehicles') window.location.hash = '#/vehicles';
     return;
@@ -892,5 +1129,19 @@ document.addEventListener('click', (event) => {
   handleActionClick(event);
 });
 
-window.addEventListener('hashchange', render);
-window.addEventListener('load', render);
+window.addEventListener('hashchange', () => {
+  if (getRouteData().route === 'dashboard') refreshDashboard();
+  else render();
+});
+window.addEventListener('load', async () => {
+  try {
+    const [catalog] = await Promise.all([
+      apiRequest('/data/vehicleYearMinimums.json'),
+      loadData(),
+    ]);
+    vehicleYearMinimums = catalog && typeof catalog === 'object' ? catalog : {};
+  } catch (error) {
+    showToast(error instanceof Error ? error.message : 'Não foi possível carregar os dados da API.', 'error');
+  }
+  render();
+});
